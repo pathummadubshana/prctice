@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\validate;
+use App\Http\Controllers\logincontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::get('/login',function(){
 });
 
 Route::post('saveworke',[validate::class,'store']);
+Route::get('detail',[logincontroller::class,'show']);
 
 
 
