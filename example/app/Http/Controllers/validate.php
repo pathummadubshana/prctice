@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\login;
+use App\Models\login;
+
 
 
 class validate extends Controller
 {
-    public function store(Request $request){
+    function store(Request $req){
     
-        dd($request->all());
-
+        $login = new login;
+        $login->name = $req->name;
+        $login->email = $req->email;
+        $login->nic = $req->nic;
+        $login->tel = $req->tel;
+        $login->pass = $req->pass;
+        $login->save();
+        return redirect('login');
 
     }
 }

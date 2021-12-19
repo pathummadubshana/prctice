@@ -10,7 +10,7 @@
     <!-- program path ---------------->
 <script>
     function validateform(){
-        var name = document.forms["myform"]["firstname"].value;
+        var name = document.forms["myform"]["name"].value;
         var email = document.forms["myform"]["email"].value;
         var nic = document.forms["myform"]["nic"].value;
         var tel = document.forms["myform"]["tel"].value;
@@ -64,10 +64,10 @@
     <div id="error"></div>
    
 
-    <form action="/saveworke" method="POST" name="myform" onsubmit="return validateform()" >
+    <form action="saveworke" method="POST" name="myform" onsubmit="return validateform()" >
    @csrf
     
-        <p>Name     : <input type = "text" id="firstname" name="firstname" title="Only string and spaces and no more 20 charcters allowed"  ><span id="errname"></span></p>
+        <p>Name     : <input type = "text" id="name" name="name" title="Only string and spaces and no more 20 charcters allowed"  ><span id="errname"></span></p>
         <p>Email    : <input type = "email" id="email" name="email" ><span id="errrepassmail"></span></p>
         <p>NIC No   : <input type = "text" id="nic" name="nic" pattern="[a-zA-Z0-9]{10,12}" title="only numbers and string allowed"></p>
         <p>Telephone No: <input type = "text" id="tel" name="tel" pattern="[0-9]{10}" title="numbers are allowed" ></p>

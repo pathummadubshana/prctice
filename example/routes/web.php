@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\validate;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,8 @@ Route::get('/login',function(){
     return view('login');
 
 });
-Route::post('/saveworke','validate@store');
+
+Route::post('saveworke',[validate::class,'store']);
+
+
+
